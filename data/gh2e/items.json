@@ -2,146 +2,306 @@
   {
     "id": 1,
     "name": "Weathered Boots",
-    "cost": 0,
+    "cost": 15,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "legs",
+    "spent": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-1.1%",
+        "small": true
+      }
+    ]
   },
   {
     "id": 2,
     "name": "Winged Shoes",
-    "cost": 0,
+    "cost": 15,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "legs",
+    "spent": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-2.1%",
+        "small": true
+      }
+    ]
   },
   {
     "id": 3,
     "name": "Hide Armor",
-    "cost": 0,
+    "cost": 10,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "body",
+    "spent": true,
+    "minusOne": 2,
+    "slots": 2,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-3.1%",
+        "small": true
+      }
+    ]
   },
   {
     "id": 4,
     "name": "Leather Armor",
-    "cost": 0,
+    "cost": 10,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "body",
+    "spent": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-4.1%",
+        "small": true
+      }
+    ]
   },
   {
     "id": 5,
     "name": "Scouting Lens",
-    "cost": 0,
+    "cost": 10,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
+    "slot": "head",
+    "spent": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-5.1%",
+        "small": true
+      }
+    ],
     "noArtwork": true
   },
   {
     "id": 6,
     "name": "Amulet of Life",
-    "cost": 0,
+    "cost": 15,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "head",
+    "spent": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-6.1%",
+        "small": true
+      }
+    ],
+    "effects": [
+      {
+        "type": "heal",
+        "value": 1
+      }
+    ]
   },
   {
     "id": 7,
     "name": "Poison Dagger",
-    "cost": 0,
+    "cost": 15,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "onehand",
+    "spent": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-7.1%",
+        "small": true
+      }
+    ]
   },
   {
     "id": 8,
     "name": "Heater Shield",
-    "cost": 0,
+    "cost": 15,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "onehand",
+    "spent": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-8.1%",
+        "small": true
+      }
+    ]
   },
   {
     "id": 9,
     "name": "Focusing Rod",
-    "cost": 0,
+    "cost": 10,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
+    "slot": "onehand",
+    "spent": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-9.1%",
+        "small": true
+      },
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-9.2%"
+      }
+    ],
     "noArtwork": true
   },
   {
     "id": 10,
     "name": "Simple Bow",
-    "cost": 0,
+    "cost": 15,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
+    "slot": "twohand",
+    "spent": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-10.1%",
+        "small": true
+      }
+    ],
     "noArtwork": true
   },
   {
     "id": 11,
     "name": "Healing Potion",
-    "cost": 0,
-    "count": 2,
+    "cost": 10,
+    "count": 4,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "small",
+    "consumed": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-11.1%",
+        "small": true
+      }
+    ],
+    "effects": [
+      {
+        "type": "heal",
+        "value": 3
+      }
+    ]
   },
   {
     "id": 12,
     "name": "Stamina Potion",
-    "cost": 0,
-    "count": 2,
+    "cost": 10,
+    "count": 4,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "small",
+    "consumed": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-12.1%",
+        "small": true
+      }
+    ]
   },
   {
     "id": 13,
     "name": "Element Potion",
-    "cost": 0,
+    "cost": 10,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "small",
+    "consumed": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-13.1%",
+        "small": true
+      }
+    ]
   },
   {
     "id": 14,
     "name": "Studded Armor",
-    "cost": 0,
+    "cost": 20,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
+    "slot": "body",
+    "spent": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-14.1%",
+        "small": true
+      }
+    ],
     "noArtwork": true
   },
   {
     "id": 15,
     "name": "Comfortable Shoes",
-    "cost": 0,
+    "cost": 20,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "legs",
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-15.1%",
+        "small": true
+      }
+    ]
   },
   {
     "id": 16,
     "name": "Circlet of Elements",
-    "cost": 0,
+    "cost": 20,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "head",
+    "spent": true,
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-16.1%",
+        "small": true
+      },
+      {
+        "type": "element",
+        "value": "wild",
+        "valueType": "minus",
+        "subActions": [
+          {
+            "type": "element",
+            "value": "wild"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 17,
@@ -749,10 +909,19 @@
   {
     "id": 84,
     "name": "Tremor Blade",
-    "cost": 0,
-    "count": 2,
+    "cost": 25,
+    "count": 1,
     "edition": "gh2e",
-    "slot": "unknown",
+    "slot": "onehand",
+    "spent": true,
+    "random": true,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-84.1%",
+        "small": true
+      }
+    ],
     "noArtwork": true
   },
   {
@@ -875,11 +1044,18 @@
   {
     "id": 98,
     "name": "Cloak of Phasing",
-    "cost": 0,
+    "cost": 20,
     "count": 2,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "body",
+    "random": true,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-98.1%",
+        "small": true
+      }
+    ]
   },
   {
     "id": 99,
@@ -974,11 +1150,18 @@
   {
     "id": 109,
     "name": "Ancient Drill",
-    "cost": 0,
-    "count": 2,
+    "cost": 30,
+    "count": 1,
     "edition": "gh2e",
-    "slot": "unknown",
-    "noArtwork": true
+    "slot": "twohand",
+    "consumed": true,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-109.1%",
+        "small": true
+      }
+    ]
   },
   {
     "id": 110,
@@ -1019,10 +1202,18 @@
   {
     "id": 114,
     "name": "Gust Striders",
-    "cost": 0,
-    "count": 2,
+    "cost": 30,
+    "count": 1,
     "edition": "gh2e",
-    "slot": "unknown",
+    "slot": "legs",
+    "spent": true,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-114.1%",
+        "small": true
+      }
+    ],
     "noArtwork": true
   },
   {
@@ -1037,10 +1228,25 @@
   {
     "id": 116,
     "name": "Fated Verses",
-    "cost": 0,
-    "count": 2,
+    "cost": 30,
+    "count": 1,
     "edition": "gh2e",
-    "slot": "unknown",
+    "slot": "onehand",
+    "unlockProsperity": 1,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-116.1%",
+        "small": true
+      }
+    ],
+    "actionsBack": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-116.2%",
+        "small": true
+      }
+    ],
     "noArtwork": true
   },
   {

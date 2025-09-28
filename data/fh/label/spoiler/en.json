@@ -551,7 +551,7 @@
     },
     "fh-127": {
       "": "Poison Dagger",
-      "1": "During your melee attack ability, add %game.condition.poison% one attack."
+      "1": "During your melee attack ability, add %game.condition.poison% to one attack."
     },
     "fh-128": {
       "": "Heater Shield",

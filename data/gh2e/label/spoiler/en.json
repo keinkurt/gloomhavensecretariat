@@ -144,10 +144,12 @@
   },
   "items": {
     "gh2e-1": {
-      "": "Weathered Boots"
+      "": "Weathered Boots",
+      "1": "During your move ability, add +1 %game.action.move%."
     },
     "gh2e-10": {
-      "": "Simple Bow"
+      "": "Simple Bow",
+      "1": "During your ranged attack ability, gain advantage on one attack"
     },
     "gh2e-100": {
       "": "Charged Boots"
@@ -177,10 +179,12 @@
       "": "Thief's Hood"
     },
     "gh2e-109": {
-      "": "Ancient Drill"
+      "": "Ancient Drill",
+      "1": "During your melee attack ability, add +2 %game.action.attack%, %game.action.pierce% 2 to all attacks."
     },
     "gh2e-11": {
-      "": "Healing Potion"
+      "": "Healing Potion",
+      "1": "During your turn, perform %game.action.heal% 3 self"
     },
     "gh2e-110": {
       "": "Fueled Falchion"
@@ -195,13 +199,16 @@
       "": "Black Card"
     },
     "gh2e-114": {
-      "": "Gust Striders"
+      "": "Gust Striders",
+      "1": "During your turn, add %game.action.jump% to your next move ability. If %game.element.air% is string or waning, also add \"+2 %game.action.move%\"."
     },
     "gh2e-115": {
       "": "Rod of Transference"
     },
     "gh2e-116": {
-      "": "Fated Verses"
+      "": "Fated Verses",
+      "1": "During your attack ability, you may gain disadvantage on one attack to flip this card over at the end of your turn.",
+      "2": "During an ally's attack ability, that ally gain advantage on one of their attacks and you flip this card over."
     },
     "gh2e-117": {
       "": "Dawnblade"
@@ -213,7 +220,8 @@
       "": "Drakescale Boots"
     },
     "gh2e-12": {
-      "": "Stamina Potion"
+      "": "Stamina Potion",
+      "1": "During your turn, %game.card.recover% one level 1 card from your discard pile."
     },
     "gh2e-120": {
       "": "Drakescale Armor"
@@ -246,7 +254,8 @@
       "": "Helm of the Mountain"
     },
     "gh2e-13": {
-      "": "Element Potion"
+      "": "Element Potion",
+      "1": "During your turn, %game.element.wild%."
     },
     "gh2e-130": {
       "": "Mountain Hammer"
@@ -279,7 +288,8 @@
       "": "Otherworldly Scepter"
     },
     "gh2e-14": {
-      "": "Studded Armor"
+      "": "Studded Armor",
+      "1": "When you are attacked, before drawing an attack modifier card, the attacker gains disadvantage on the attack and you gain %game.action.shield% 1 for the attack."
     },
     "gh2e-140": {
       "": "Remote Attack Spider"
@@ -312,7 +322,8 @@
       "": "Aesther Spyglass"
     },
     "gh2e-15": {
-      "": "Comfortable Shoes"
+      "": "Comfortable Shoes",
+      "1": "When you use the basic bottom action of an ability card, perform \"%game.action.move% 3\" instead of \"%game.action.move% 2\"."
     },
     "gh2e-150": {
       "": "Experimental Armor"
@@ -324,7 +335,8 @@
       "": "Ruby Talisman"
     },
     "gh2e-16": {
-      "": "Circlet of Elements"
+      "": "Circlet of Elements",
+      "1": "During your turn, perform:"
     },
     "gh2e-17": {
       "": "Boots of Speed"
@@ -336,7 +348,8 @@
       "": "Warden's Robes"
     },
     "gh2e-2": {
-      "": "Winged Shoes"
+      "": "Winged Shoes",
+      "1": "During your movement, add %game.action.jump% to the movement."
     },
     "gh2e-20": {
       "": "Hooked Chain"
@@ -369,7 +382,8 @@
       "": "Nimble Legguards"
     },
     "gh2e-3": {
-      "": "Hide Armor"
+      "": "Hide Armor",
+      "1": "On the next two sources of %game.damage% from attacks targeting you, gain %game.action.shield% 1 for the attacks."
     },
     "gh2e-30": {
       "": "Armorbane Bow"
@@ -402,7 +416,8 @@
       "": "Ring of Skulls"
     },
     "gh2e-4": {
-      "": "Leather Armor"
+      "": "Leather Armor",
+      "1": "When you are attacked, before drawing an attack modifier card, the attacker gains disadvantage on the attack."
     },
     "gh2e-40": {
       "": "Shadow Amor"
@@ -435,7 +450,8 @@
       "": "Horned Helm"
     },
     "gh2e-5": {
-      "": "Scouting Lens"
+      "": "Scouting Lens",
+      "1": "During your attack ability, add %game.action.pierce% 1 to one attack."
     },
     "gh2e-50": {
       "": "Robes of the Oak"
@@ -468,7 +484,8 @@
       "": "Telescopic Lens"
     },
     "gh2e-6": {
-      "": "Amulet of Life"
+      "": "Amulet of Life",
+      "1": "During your turn, perform a %game.action.heal% 1, Self action."
     },
     "gh2e-60": {
       "": "Staff of Eminence"
@@ -501,7 +518,8 @@
       "": "Plate Mail"
     },
     "gh2e-7": {
-      "": "Poison Dagger"
+      "": "Poison Dagger",
+      "1": "During your melee attack ability, add %game.condition.poison% to one attack."
     },
     "gh2e-70": {
       "": "Standard Rations"
@@ -534,7 +552,8 @@
       "": "Doom Powder"
     },
     "gh2e-8": {
-      "": "Heater Shield"
+      "": "Heater Shield",
+      "1": "When you suffer %game.damage% from an attack, gain %game.action.shield% 1 for the attack."
     },
     "gh2e-80": {
       "": "Demonic Skull"
@@ -549,7 +568,8 @@
       "": "Inferno Blade"
     },
     "gh2e-84": {
-      "": "Tremor Blade"
+      "": "Tremor Blade",
+      "1": "During your melee attack ability, %game.element.consume.earth% to add +2 %game.action.attack% to one attack."
     },
     "gh2e-85": {
       "": "Brilliant Blade"
@@ -567,7 +587,9 @@
       "": "Swordedge Armor"
     },
     "gh2e-9": {
-      "": "Focusing Rod"
+      "": "Focusing Rod",
+      "1": "During your turn, if you've performed an action with %game.card.lost%, perform:",
+      "2": "%game.action.heal% 1, %game.action.range:3%"
     },
     "gh2e-90": {
       "": "Blinking Cape"
@@ -594,7 +616,8 @@
       "": "Shoes of Happiness"
     },
     "gh2e-98": {
-      "": "Cloak of Phasing"
+      "": "Cloak of Phasing",
+      "1": "During your turn, designate the hex you are occupying and add %game.action.jump% to all your move abilities. At the end of your turn, %game.action.teleport% to the designated hex."
     },
     "gh2e-99": {
       "": "Unstable Explosives"
