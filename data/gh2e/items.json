@@ -1105,10 +1105,34 @@
   {
     "id": 104,
     "name": "Warding Rod",
-    "cost": 0,
-    "count": 2,
+    "cost": 20,
+    "count": 1,
     "edition": "gh2e",
-    "slot": "unknown",
+    "slot": "onehand",
+    "spent": true,
+    "actions": [
+      {
+        "type": "custom",
+        "value": "%data.items.gh2e-104.1%",
+        "small": true
+      },
+      {
+        "type": "condition",
+        "value": "ward",
+        "subActions": [
+          {
+            "type": "target",
+            "value": 2,
+            "small": true
+          },
+          {
+            "type": "range",
+            "value": 3,
+            "small": true
+          }
+        ]
+      }
+    ],
     "noArtwork": true
   },
   {
