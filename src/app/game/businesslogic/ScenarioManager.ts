@@ -2002,6 +2002,54 @@ export class ScenarioManager {
     return [scenario.index, this.scenarioTitle(scenario), scenario.custom ? 'scenario.custom' : 'data.edition.' + scenario.edition];
   }
 
+  addManualScenario(scenarioData: ScenarioData): boolean {
+    const alreadyAvailable = this.scenarioData(scenarioData.edition, false).some(
+      (available) =>
+        available.edition === scenarioData.edition && available.group === scenarioData.group && available.index === scenarioData.index
+    );
+
+    if (alreadyAvailable) {
+      return false;
+    }
+
+    gameManager.stateManager.before('addManualScenario', ...this.scenarioUndoArgs(new Scenario(scenarioData)));
+    this.game.party.manualScenarios.push(new GameScenarioModel(scenarioData.index, scenarioData.edition, scenarioData.group));
+    gameManager.stateManager.after();
+    return true;
+  }
+
+  addManualScenarios(edition: string, group: string | undefined, indices: string[]): string[] {
+    const scenarios = this.scenarioData(edition, true).filter((scenarioData) => scenarioData.group === group);
+    const failed: string[] = [];
+
+    indices
+      .map((index) => index.trim())
+      .filter((index) => index.length > 0)
+      .forEach((index) => {
+        const exact = scenarios.find((scenarioData) => scenarioData.index === index);
+        if (exact) {
+          this.addManualScenario(exact);
+          return;
+        }
+
+        // expand plain indices (e.g. "23") into their lettered sub-scenario variants (e.g. "23A", "23B")
+        const variants = scenarios.filter(
+          (scenarioData) =>
+            scenarioData.index.substring(0, scenarioData.index.length - 1) === index &&
+            scenarioData.index.substring(scenarioData.index.length - 1).match(/[A-B]/)
+        );
+
+        if (variants.length === 0) {
+          failed.push(index);
+          return;
+        }
+
+        variants.forEach((scenarioData) => this.addManualScenario(scenarioData));
+      });
+
+    return failed;
+  }
+
   scenarioTitle(scenarioData: ScenarioData | undefined, section: boolean = false): string {
     if (!scenarioData) {
       return section ? 'section' : 'scenario';

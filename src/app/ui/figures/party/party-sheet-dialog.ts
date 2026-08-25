@@ -20,7 +20,7 @@ import { ItemData } from 'src/app/game/model/data/ItemData';
 import { herbResourceLootTypes, LootType, materialResourceLootTypes } from 'src/app/game/model/data/Loot';
 import { ScenarioData } from 'src/app/game/model/data/ScenarioData';
 import { Party } from 'src/app/game/model/Party';
-import { GameScenarioModel, Scenario, ScenarioCache } from 'src/app/game/model/Scenario';
+import { Scenario, ScenarioCache } from 'src/app/game/model/Scenario';
 import { AttackModiferDeckChange, AttackModifierDeckComponent } from 'src/app/ui/figures/attackmodifier/attackmodifierdeck';
 import { PerkLabelComponent } from 'src/app/ui/figures/attackmodifier/perk/label';
 import { BattleGoalSetupDialog } from 'src/app/ui/figures/battlegoal/setup/battlegoal-setup';
@@ -301,30 +301,16 @@ export class PartySheetDialogComponent implements OnInit {
   unlockScenario(indexElement: HTMLInputElement, groupElement: HTMLInputElement, edition: string) {
     const index: string = indexElement.value;
     const group: string | undefined = groupElement.value || undefined;
-    const scenarioData = gameManager.scenarioManager
-      .scenarioData(edition, true)
-      .find((scenarioData) => scenarioData.index === index && scenarioData.group === group);
     indexElement.classList.add('error');
     groupElement.classList.add('error');
-    if (
-      scenarioData &&
-      !this.scenarios[edition].find(
-        (scenarioCache) =>
-          scenarioCache.edition === scenarioData.edition &&
-          scenarioCache.group === scenarioData.group &&
-          scenarioCache.index === scenarioData.index
-      ) &&
-      !this.party.manualScenarios.some(
-        (gameScenarioModel) =>
-          gameScenarioModel.index === scenarioData.index &&
-          gameScenarioModel.edition === scenarioData.edition &&
-          gameScenarioModel.group === scenarioData.group &&
-          !gameScenarioModel.isCustom
-      )
-    ) {
-      gameManager.stateManager.before('addManualScenario', ...gameManager.scenarioManager.scenarioUndoArgs(new Scenario(scenarioData)));
-      gameManager.game.party.manualScenarios.push(new GameScenarioModel(scenarioData.index, scenarioData.edition, scenarioData.group));
-      gameManager.stateManager.after();
+
+    if (index.trim().length === 0) {
+      return;
+    }
+
+    const failed = gameManager.scenarioManager.addManualScenarios(edition, group, [index]);
+
+    if (failed.length === 0) {
       indexElement.classList.remove('error');
       indexElement.value = '';
       groupElement.classList.remove('error');

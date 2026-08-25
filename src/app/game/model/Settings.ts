@@ -191,6 +191,7 @@ export class Settings {
   scenarioRules: boolean = true;
   scenarioRulesAutoapply: boolean = false;
   scenarioStats: boolean = false;
+  scrollWheelValues: boolean = true;
   serverAutoconnect: boolean = true;
   serverCode: string | undefined;
   serverExportCode: boolean = true;
@@ -305,6 +306,7 @@ export const localSettings: string[] = [
   'portraitMode',
   'pressDoubleClick',
   'roundClock',
+  'scrollWheelValues',
   'serverAutoconnect',
   'serverCode',
   'serverExportCode',

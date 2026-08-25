@@ -244,8 +244,10 @@ export class PointerInputDirective implements OnInit {
       this.disabled() ||
       this.draggingDisabled() ||
       !this.scrollWheel() ||
-      !settingsManager.settings.dragValues ||
-      !(this._dragMove$.observed || this._dragEnd$.observed)
+      !settingsManager.settings.scrollWheelValues ||
+      !(this._dragMove$.observed || this._dragEnd$.observed) ||
+      event.ctrlKey ||
+      !window.matchMedia('(any-pointer: fine)').matches
     ) {
       return;
     }

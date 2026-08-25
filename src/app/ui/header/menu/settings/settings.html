@@ -558,13 +558,14 @@
         <div class="line" ghs-setting-menu="pressDoubleClick"></div>
         <div class="line" ghs-setting-menu="dragFigures"></div>
         <div class="line" ghs-setting-menu="dragValues"></div>
+        <div class="line" ghs-setting-menu="scrollWheelValues"></div>
       </div>
 
       <div class="column">
-        <div class="line" ghs-setting-menu="dragValuesHp" [requires]="['dragValues']" [hint]="false"></div>
-        <div class="line" ghs-setting-menu="dragValuesInitiative" [requires]="['dragValues']" [hint]="false"></div>
-        <div class="line" ghs-setting-menu="dragValuesLoot" [requires]="['dragValues']" [hint]="false"></div>
-        <div class="line" ghs-setting-menu="dragValuesXp" [requires]="['dragValues']" [hint]="false"></div>
+        <div class="line" ghs-setting-menu="dragValuesHp" [requiresOne]="['dragValues', 'scrollWheelValues']" [hint]="false"></div>
+        <div class="line" ghs-setting-menu="dragValuesInitiative" [requiresOne]="['dragValues', 'scrollWheelValues']" [hint]="false"></div>
+        <div class="line" ghs-setting-menu="dragValuesLoot" [requiresOne]="['dragValues', 'scrollWheelValues']" [hint]="false"></div>
+        <div class="line" ghs-setting-menu="dragValuesXp" [requiresOne]="['dragValues', 'scrollWheelValues']" [hint]="false"></div>
       </div>
 
       <div class="separator span"></div>

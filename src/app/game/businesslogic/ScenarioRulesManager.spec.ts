@@ -155,18 +155,19 @@ describe('ScenarioRulesManager', () => {
       expect(scenarioRulesManager.scenarioRuleActive(rule, 0, false)).toBe(true);
     });
 
-    it('rule.start matches game.round directly outside initial setup (game.round is already the live round once GameState.next is reached)', () => {
+    it('uses R = round + 1 when rule.start is set', () => {
       const rule = Object.assign(new ScenarioRule('R==2'), { always: true, start: true });
-      gameManager.game.round = 2;
-      expect(scenarioRulesManager.scenarioRuleActive(rule, 0, false)).toBe(true);
       gameManager.game.round = 1;
-      expect(scenarioRulesManager.scenarioRuleActive(rule, 0, false)).toBe(false);
+      expect(scenarioRulesManager.scenarioRuleActive(rule, 0, false)).toBe(true);
     });
 
-    it('rule.start uses R = round + 1 only during initial setup, before game.round has been incremented for round 1', () => {
-      const rule = Object.assign(new ScenarioRule('R==1'), { always: true, start: true });
-      gameManager.game.round = 0;
-      expect(scenarioRulesManager.scenarioRuleActive(rule, 0, false, true)).toBe(true);
+    it('does not re-activate a start rule at the round-1-to-round-2 transition', () => {
+      // regression test: game.round is still 1 (not yet incremented) and game.state is still
+      // GameState.next when addScenarioRules() runs at the top of the round-2 nextGameState() call
+      const rule = Object.assign(new ScenarioRule('R==1'), { start: true });
+      gameManager.game.round = 1;
+      gameManager.game.state = GameState.next;
+      expect(scenarioRulesManager.scenarioRuleActive(rule, 0, false)).toBe(false);
     });
 
     it('without rule.always, is only active during GameState.next (or start+initial)', () => {

@@ -690,7 +690,7 @@
             }
           </div>
         }
-        @if (success && !!conclusion && !!conclusion.unlocks && conclusion.unlocks.length > 0) {
+        @if (success && !!conclusion && conclusion !== scenario && !!conclusion.unlocks && conclusion.unlocks.length > 0) {
           <div class="reward locations">
             <label
               ><span [ghs-label]="conclusion.unlocks.length > 1 ? 'scenario.rewards.locations' : 'scenario.rewards.location'"></span
