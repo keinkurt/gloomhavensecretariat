@@ -265,11 +265,11 @@ describe('SpecialActionsManager', () => {
     it('coral + roundAction-perk9: removes the round-scoped Shield 1 gained from the long rest perk', () => {
       const character = buildCharacter('coral', 'fh');
       character.tags = ['perk9', 'roundAction-perk9'];
-      character.extraActionsPersistent = [new Action(ActionType.shield, 1)];
+      character.extraActions = [new Action(ActionType.shield, 1)];
 
       specialActionsManager.next(character);
 
-      expect(character.extraActionsPersistent.find((a) => a.type === ActionType.shield)).toBeUndefined();
+      expect(character.extraActions.find((a) => a.type === ActionType.shield)).toBeUndefined();
     });
   });
 
@@ -346,40 +346,40 @@ describe('SpecialActionsManager', () => {
       expect(character.extraActionsPersistent.length).toBe(0);
     });
 
-    it('coral + long_rest perk while long resting: grants a persistent Shield 1 and tags roundAction-long_rest', () => {
+    it('coral + perk9 while long resting: grants a round-scoped Shield 1 and tags roundAction-perk9', () => {
       const character = buildCharacter('coral', 'fh');
-      character.tags = ['long_rest'];
+      character.tags = ['perk9'];
       character.longRest = true;
-      character.extraActionsPersistent = [];
+      character.extraActions = [];
 
       specialActionsManager.draw(character);
 
-      expect(character.tags).toContain('roundAction-long_rest');
-      expect(character.extraActionsPersistent.find((a) => a.type === ActionType.shield)?.value).toBe(1);
+      expect(character.tags).toContain('roundAction-perk9');
+      expect(character.extraActions.find((a) => a.type === ActionType.shield)?.value).toBe(1);
     });
 
-    it('coral + long_rest perk without a declared long rest: grants nothing', () => {
+    it('coral + perk9 without a declared long rest: grants nothing', () => {
       const character = buildCharacter('coral', 'fh');
-      character.tags = ['long_rest'];
+      character.tags = ['perk9'];
       character.longRest = false;
-      character.extraActionsPersistent = [];
+      character.extraActions = [];
 
       specialActionsManager.draw(character);
 
-      expect(character.tags).not.toContain('roundAction-long_rest');
-      expect(character.extraActionsPersistent.length).toBe(0);
+      expect(character.tags).not.toContain('roundAction-perk9');
+      expect(character.extraActions.length).toBe(0);
     });
 
-    it('coral + long_rest perk: does not stack the shield again once roundAction-long_rest is set', () => {
+    it('coral + perk9: does not stack the shield again once roundAction-perk9 is set', () => {
       const character = buildCharacter('coral', 'fh');
-      character.tags = ['long_rest', 'roundAction-long_rest'];
+      character.tags = ['perk9', 'roundAction-perk9'];
       character.longRest = true;
-      character.extraActionsPersistent = [new Action(ActionType.shield, 1)];
+      character.extraActions = [new Action(ActionType.shield, 1)];
 
       specialActionsManager.draw(character);
 
-      expect(character.extraActionsPersistent.length).toBe(1);
-      expect(character.extraActionsPersistent[0].value).toBe(1);
+      expect(character.extraActions.length).toBe(1);
+      expect(character.extraActions[0].value).toBe(1);
     });
   });
 
