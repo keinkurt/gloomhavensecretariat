@@ -201,7 +201,13 @@
           "hint": "Your current and maximum hitpoint values are increased by 3."
         }
       },
-      "coral": "Crashing Tide",
+      "coral": {
+        "": "Crashing Tide",
+        "perk9": {
+          "": "Perk 9",
+          "hint": "%data.custom.fh.coral.3%"
+        }
+      },
       "drill": {
         "": "Metal Mosaic",
         "high": "High",

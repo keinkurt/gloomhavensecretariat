@@ -156,6 +156,16 @@ export class SpecialActionsManager {
       }
     }
 
+    if (!character.absent && character.name === 'coral' && character.tags.includes('roundAction-perk9')) {
+      const coralShield = character.extraActions.find((action) => action.type === ActionType.shield);
+      if (coralShield) {
+        coralShield.value = EntityValueFunction(coralShield.value) - 1;
+        if (coralShield.value <= 0) {
+          character.extraActions = character.extraActions.filter((action) => action.type !== ActionType.shield);
+        }
+      }
+    }
+
     this.triggerSlot(character, 'roundEnd');
   }
 
@@ -184,6 +194,23 @@ export class SpecialActionsManager {
       const existingShield = character.extraActionsPersistent.find((action) => action.type === ActionType.shield);
       if (!existingShield) {
         character.extraActionsPersistent.push(new Action(ActionType.shield, 1));
+      } else {
+        existingShield.value = EntityValueFunction(existingShield.value) + 1;
+      }
+    }
+
+    // FH Coral Perk 9: whenever you declare a long rest during card selection, gain Shield 1 for the round
+    if (
+      !character.absent &&
+      character.name === 'coral' &&
+      character.tags.includes('perk9') &&
+      character.longRest &&
+      !character.tags.includes('roundAction-perk9')
+    ) {
+      character.tags.push('roundAction-perk9');
+      const existingShield = character.extraActions.find((action) => action.type === ActionType.shield);
+      if (!existingShield) {
+        character.extraActions.push(new Action(ActionType.shield, 1));
       } else {
         existingShield.value = EntityValueFunction(existingShield.value) + 1;
       }

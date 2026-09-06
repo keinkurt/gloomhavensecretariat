@@ -288,12 +288,13 @@ export class ActionsManager {
           actionHints.push(actionHint);
         }
       } else if (
-        (action.type === ActionType.monsterType && action.value === monsterType) ||
+        (action.subActions && action.type === ActionType.monsterType && action.value === monsterType) ||
         action.type === ActionType.concatenation ||
         action.type === ActionType.grid
       ) {
         this.calcMonsterActionHint(monster, monsterType, type, action.subActions, actionHints, index);
       } else if (
+        action.subActions &&
         action.type === ActionType.element &&
         action.valueType === ActionValueType.minus &&
         monster.entities.find((monsterEntity) => monsterEntity.tags.find((tag) => tag === this.roundTag(action, index)))
@@ -301,8 +302,9 @@ export class ActionsManager {
         this.calcMonsterActionHint(monster, monsterType, type, action.subActions, actionHints, index);
       } else if (action.type === ActionType.special) {
         const stats = monster.stats.find((stat) => stat.level === monster.level && stat.type === monsterType);
-        if (stats) {
-          this.calcMonsterActionHint(monster, monsterType, type, stats.special[EntityValueFunction(action.value) - 1], actionHints, index);
+        const special = stats && stats.special[EntityValueFunction(action.value) - 1];
+        if (special) {
+          this.calcMonsterActionHint(monster, monsterType, type, special, actionHints, index);
         }
       }
     });

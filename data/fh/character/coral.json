@@ -10,6 +10,12 @@
   ],
   "color": "#4c988b",
   "spoiler": true,
+  "specialActions": [
+    {
+      "name": "perk9",
+      "perk": 9
+    }
+  ],
   "stats": [
     {
       "level": 1,
