@@ -3,6 +3,11 @@
   "name": "Secluded Valley",
   "edition": "gh2e",
   "parent": "42",
+  "parentSections": [
+    [
+      "83.4"
+    ]
+  ],
   "monsters": [
     "city-guard",
     "stone-construct"
